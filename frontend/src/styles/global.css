@@ -17,6 +17,10 @@
   position: relative;
 }
 
+main {
+  padding: 3rem 6% 4rem;
+}
+
 /* Glow effect */
 .project-card::before {
   content: "";
@@ -85,4 +89,96 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+}
+.project-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 2rem 1.8rem;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.project-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-main);
+}
+.project-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  max-width: 90%;
+}
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.tech-stack span {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--accent);
+  white-space: nowrap;
+}
+.project-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+.project-actions a {
+  text-align: center;
+  padding: 0.55rem 0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--accent);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  transition: all 0.25s ease;
+}
+
+.project-actions a:hover {
+  background: rgba(56, 189, 248, 0.15);
+}
+.project-card {
+  min-height: 340px;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 6%;
+  background: rgba(11, 15, 25, 0.9);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.logo {
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
 }

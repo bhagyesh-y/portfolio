@@ -4,21 +4,13 @@ const ProjectCard = ({ project }) => {
             className="project-card"
             onMouseMove={(e) => {
                 const rect = e.currentTarget.getBoundingClientRect();
-                e.currentTarget.style.setProperty(
-                    "--x",
-                    `${e.clientX - rect.left}px`
-                );
-                e.currentTarget.style.setProperty(
-                    "--y",
-                    `${e.clientY - rect.top}px`
-                );
+                e.currentTarget.style.setProperty("--x", `${e.clientX - rect.left}px`);
+                e.currentTarget.style.setProperty("--y", `${e.clientY - rect.top}px`);
             }}
         >
-            <h3>{project.title}</h3>
+            <h3 className="project-title">{project.title}</h3>
 
-            <p className="project-desc">
-                {project.short_description}
-            </p>
+            <p className="project-desc">{project.short_description}</p>
 
             <div className="tech-stack">
                 {project.tech_stack.split(",").map((tech, index) => (
@@ -26,7 +18,7 @@ const ProjectCard = ({ project }) => {
                 ))}
             </div>
 
-            <div className="project-links">
+            <div className="project-actions">
                 {project.live_url && (
                     <a href={project.live_url} target="_blank">Live</a>
                 )}
