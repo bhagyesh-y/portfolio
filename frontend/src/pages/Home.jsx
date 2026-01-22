@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 import ProjectCard from "../components/ProjectCard";
 import { useEffect, useState } from "react";
 import { fetchFeaturedProjects } from "../api/projects";
-
+import useScrollFade from "../hooks/useScrollFade";
 
 const Home = () => {
     const [projects, setProjects] = useState([]);
+
+    // 🔹 THIS WAS MISSING — VERY IMPORTANT
+    useScrollFade();
 
     useEffect(() => {
         fetchFeaturedProjects()
@@ -15,9 +18,8 @@ const Home = () => {
 
     return (
         <div className="home">
-
-            {/* HERO */}
-            <section className="home-hero">
+            {/* HERO (always visible) */}
+            <section className="home-hero fade-section visible">
                 <h1>
                     Hi, I’m <span>Bhagyesh</span>
                 </h1>
@@ -40,7 +42,7 @@ const Home = () => {
             </section>
 
             {/* FEATURED PROJECTS */}
-            <section className="home-projects">
+            <section className="home-projects fade-section">
                 <h3 className="section-title">Featured Projects</h3>
 
                 <div className="projects-grid">
@@ -54,8 +56,8 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* SKILLS */}
-            <section className="home-skills">
+            {/* SKILLS (FIXED: fade-section instead of fade-skills) */}
+            <section className="home-skills fade-section">
                 <h3 className="section-title">Skills</h3>
 
                 <div className="skills-grid">
@@ -77,7 +79,7 @@ const Home = () => {
             </section>
 
             {/* ABOUT */}
-            <section className="home-about">
+            <section className="home-about fade-section">
                 <h3 className="section-title">About Me</h3>
 
                 <p>
@@ -88,13 +90,12 @@ const Home = () => {
             </section>
 
             {/* CTA */}
-            <section className="home-cta">
+            <section className="home-cta fade-section">
                 <h3>Interested in working together?</h3>
                 <Link to="/contact" className="btn-primary">
                     Let’s Talk
                 </Link>
             </section>
-
         </div>
     );
 };
