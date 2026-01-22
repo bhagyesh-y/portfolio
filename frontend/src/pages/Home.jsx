@@ -56,22 +56,22 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* SKILLS (FIXED: fade-section instead of fade-skills) */}
+            {/* SKILLS */}
             <section className="home-skills fade-section">
                 <h3 className="section-title">Skills</h3>
 
-                <div className="skills-grid">
-                    <div>
+                <div className="skills-card-grid">
+                    <div className="skill-card">
                         <h4>Frontend</h4>
                         <p>React, JavaScript, HTML, CSS</p>
                     </div>
 
-                    <div>
+                    <div className="skill-card">
                         <h4>Backend</h4>
                         <p>Python, Django, Django REST Framework</p>
                     </div>
 
-                    <div>
+                    <div className="skill-card">
                         <h4>Database & Tools</h4>
                         <p>PostgreSQL, SQLite, Git, GitHub, REST APIs</p>
                     </div>

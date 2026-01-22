@@ -330,6 +330,41 @@ main {
 .skills-grid p {
   color: var(--text-muted);
 }
+/* Skills Cards */
+.skills-card-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.skill-card h4 {
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.skill-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
 .home-about {
   max-width: 700px;
   margin: 5rem auto;
@@ -418,4 +453,55 @@ main {
 .error-msg {
   color: #ef4444;
   font-size: 0.85rem;
+}
+/* Footer */
+.footer {
+  margin-top: 6rem;
+  padding: 3rem 6% 1.5rem;
+  background: rgba(11, 15, 25, 0.9);
+  border-top: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-left h4 {
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.footer-left p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.footer-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-right a {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-right a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
