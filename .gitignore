@@ -1,14 +1,27 @@
-# Backend
+# =====================
+# Backend (Django)
+# =====================
 backend/venv/
 backend/.env
 backend/db.sqlite3
-backend/__pycache__/
 backend/media/
 backend/staticfiles/
 
-# Frontend
+__pycache__/
+*.pyc
+
+# =====================
+# Frontend (React / Vite)
+# =====================
 frontend/node_modules/
 frontend/.env
+frontend/dist/
+frontend/.vite/
 
+# =====================
 # General
+# =====================
+.env
 .DS_Store
+Thumbs.db
+.vscode/
