@@ -3,7 +3,7 @@ import ProjectCard from "../components/ProjectCard";
 import { useEffect, useState } from "react";
 import { fetchFeaturedProjects } from "../api/projects";
 import useScrollFade from "../hooks/useScrollFade";
-
+import SEO from "../components/SEO";
 const Home = () => {
     const [projects, setProjects] = useState([]);
 
@@ -17,7 +17,12 @@ const Home = () => {
     }, []);
 
     return (
+
         <div className="home">
+            <SEO
+                title="Bhagyesh | Full Stack Developer (React & Django)"
+                description="Full Stack Developer specializing in React and Django. Explore featured projects, skills, and contact information."
+            />
             {/* HERO (always visible) */}
             <section className="home-hero fade-section visible">
                 <h1>

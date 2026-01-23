@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../api/axios";
-
+import SEO from "../components/SEO";
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: "",
@@ -32,6 +32,10 @@ const Contact = () => {
 
     return (
         <section className="contact-page fade-section visible">
+            <SEO
+                title="Contact | Bhagyesh"
+                description="Get in touch with Bhagyesh for full stack development opportunities or collaborations."
+            />
             <h1 className="section-title">Contact Me</h1>
 
             <p className="contact-intro">
