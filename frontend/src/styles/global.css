@@ -139,7 +139,6 @@ main {
   z-index: 100;
   background: rgba(11, 15, 25, 0.85);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
 }
 
 .nav-container {
@@ -228,21 +227,23 @@ main {
   .hamburger {
     display: flex;
   }
-
   .nav-links {
     position: absolute;
     top: 100%;
-    right: 4rem;
+    left: 0;
+    width: 100%;
 
-    background: rgba(11, 15, 25, 0.95);
+    background: rgba(11, 15, 25, 0.98);
     backdrop-filter: blur(12px);
 
+    display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1.4rem;
 
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(56, 189, 248, 0.15);
+    padding: 1.6rem 0;
+
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15);
 
     opacity: 0;
     transform: translateY(-10px);
@@ -504,4 +505,53 @@ main {
   text-align: center;
   font-size: 0.75rem;
   color: var(--text-muted);
+}
+/* ===== Animated Background ===== */
+/* ===== Animated Background ===== */
+.app-bg {
+  position: relative;
+  min-height: 100vh;
+  background: #ffffff;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+.app-bg::before,
+.app-bg::after {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  background: radial-gradient(
+    circle at 20% 20%,
+    rgba(56, 189, 248, 0.18),
+    transparent 45%
+  );
+  animation: floatBg 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+.app-bg::after {
+  background: radial-gradient(
+    circle at 80% 80%,
+    rgba(99, 102, 241, 0.16),
+    transparent 50%
+  );
+  animation-duration: 30s;
+}
+
+.app-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes floatBg {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5%, 7%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
